@@ -1,0 +1,26 @@
+{
+    "settings": {
+        "dart.flutterSdkPath": "/Users/grrravity/.asdf/installs/flutter/3.16.4-stable"
+    },
+    "folders": [
+    {
+        "name": "App",
+        "path": "./",
+    },
+    ],
+    "launch": {
+    "version": "0.2.0",
+    "configurations": [
+        {
+        "name": "DEV Mob (current device)",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "debug",
+        "program": "${workspaceFolder:App}/lib/main.dart",
+        "toolArgs": [
+            "--dart-define-from-file=${workspaceFolder:App}/.config.json"
+        ]
+        },
+    ]
+    }
+}
