@@ -12,10 +12,11 @@ class DioInterceptor extends Interceptor {
     RequestOptions options,
     RequestInterceptorHandler handler,
   ) async {
+    final queryParams = {...options.uri.queryParameters};
     if (injectQueryParameter != null) {
-      options.uri.queryParameters.addAll(injectQueryParameter!);
+      queryParams.addAll(injectQueryParameter!);
     }
-
+    options.queryParameters = queryParams;
     DioApiLogger(clientName).onRequestLogger(options);
 
     super.onRequest(options, handler);

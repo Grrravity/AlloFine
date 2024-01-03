@@ -1,10 +1,10 @@
 import 'package:allofine/core/error/failure.dart';
+import 'package:allofine/domain/entities/media_type.dart';
 import 'package:allofine/presentation/localization/l10n.dart';
 import 'package:flutter/material.dart';
 
-//TODO implement it
-extension ArbKey on Failure? {
-  String? localized(BuildContext context) {
+extension OnFailureLocalisation on Failure {
+  String localized(BuildContext context) {
     final l10n = context.l10n;
     switch (this) {
       case Failure.connectivity:
@@ -21,8 +21,17 @@ extension ArbKey on Failure? {
         return l10n.failureQuotaExeeded;
       case Failure.unauthorized:
         return l10n.failureUnauthorized;
-      case null:
-        return null;
     }
+  }
+}
+
+extension OnMediaTypeLocalisation on MediaType {
+  String localized(BuildContext context) {
+    final l10n = context.l10n;
+    return map(
+      series: (_) => l10n.mediaTypeSeries,
+      movie: (_) => l10n.mediaTypeMovie,
+      other: (other) => other.label,
+    );
   }
 }

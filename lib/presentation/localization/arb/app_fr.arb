@@ -1,10 +1,32 @@
 {
   "@@locale": "fr",
+  "countSearchResults": "{resultNumbers, plural, =0{Pas de résultat} =1{1 Résultat} other{{resultNumbers} Résultats}}",
+  "@countSearchResults": {
+    "description": "A plural message",
+    "placeholders": {
+      "resultNumbers": {
+        "type": "int",
+        "format": "compact"
+      },
+      "plural": {
+        "type": "bool"
+      }
+    }
+  },
+  "emptyDefaultMessage": "Oups !",
+  "errorDetaultMessage": "Oups, une erreur est survenue\r\n\r\n",
   "failureConnectivity": "Aucune connection internet",
   "failureExpired": "Api key expirée",
   "failureInvalidCommand": "Commande invalide",
   "failureNotFound": "Element non trouvé",
   "failureOther": "Une erreur inconnue est survenue",
   "failureQuotaExeeded": "Quota dépassé",
-  "failureUnauthorized": "Action non autorisée"
+  "failureUnauthorized": "Action non autorisée",
+  "mediaTypeMovie": "Film",
+  "mediaTypeSeries": "Série",
+  "noMatchingMedia": "Aucun résultat :(",
+  "noMoreResult": "Aucun autre résultat",
+  "noResultMessage": "Essayez une nouvelle recherche :)",
+  "noResultTitle": "Aucun résultat !",
+  "searchHint": "Rechercher..."
 }
