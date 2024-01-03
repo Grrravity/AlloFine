@@ -86,74 +86,80 @@ class _MediaAbstractCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 85,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 85,
-            height: 85,
-            decoration: ShapeDecoration(
-              image: DecorationImage(
-                image: CachedNetworkImageProvider(
-                  item.pictureUrl ?? '',
-                ),
-                fit: BoxFit.fill,
-              ),
-              shape: RoundedRectangleBorder(
-                side: const BorderSide(
-                  width: 3,
-                  strokeAlign: BorderSide.strokeAlignCenter,
-                  color: Colors.white,
-                ),
-                borderRadius: BorderRadius.circular(6),
-              ),
-              shadows: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  blurRadius: 4,
-                  offset: const Offset(0, 3),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    item.title,
-                    style: context.textTheme.bodyMedium,
-                    maxLines: 2,
+    return InkWell(
+      onTap: () => context.goNamed(
+        ExplorerDetailPage.routeName,
+        pathParameters: {ExplorerDetailPage.idPathParam: item.id},
+      ),
+      child: SizedBox(
+        height: 85,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 85,
+              height: 85,
+              decoration: ShapeDecoration(
+                image: DecorationImage(
+                  image: CachedNetworkImageProvider(
+                    item.pictureUrl ?? '',
                   ),
-                  const SizedBox(
-                    height: 4,
+                  fit: BoxFit.fill,
+                ),
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(
+                    width: 3,
+                    strokeAlign: BorderSide.strokeAlignCenter,
+                    color: Colors.white,
                   ),
-                  RichText(
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      style: Theme.of(context).textTheme.bodySmall,
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: item.type.localized(context),
-                        ),
-                        const TextSpan(
-                          text: ' | ', //NOTE Could be done cleaner
-                        ),
-                        TextSpan(text: item.year),
-                      ],
-                    ),
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                shadows: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 4,
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
             ),
-          ),
-        ],
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(8, 8, 8, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      item.title,
+                      style: context.textTheme.bodyMedium,
+                      maxLines: 2,
+                    ),
+                    const SizedBox(
+                      height: 4,
+                    ),
+                    RichText(
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        style: Theme.of(context).textTheme.bodySmall,
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: item.type.localized(context),
+                          ),
+                          const TextSpan(
+                            text: ' | ', //NOTE Could be done cleaner
+                          ),
+                          TextSpan(text: item.year),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

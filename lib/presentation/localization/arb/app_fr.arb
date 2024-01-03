@@ -1,5 +1,7 @@
 {
   "@@locale": "fr",
+  "cannotFindDetail": "Impossible de réccupérer l'élément",
+  "cannotFindDetailMessage": "Vous pouvez réessayer plus tard",
   "countSearchResults": "{resultNumbers, plural, =0{Pas de résultat} =1{1 Résultat} other{{resultNumbers} Résultats}}",
   "@countSearchResults": {
     "description": "A plural message",
@@ -22,11 +24,19 @@
   "failureOther": "Une erreur inconnue est survenue",
   "failureQuotaExeeded": "Quota dépassé",
   "failureUnauthorized": "Action non autorisée",
+  "informationTabTitle": "Informations",
   "mediaTypeMovie": "Film",
   "mediaTypeSeries": "Série",
+  "movieActorTitle": "Acteurs",
+  "movieLanguageTitle": "Langues",
+  "movieLengthTitle": "Durée",
   "noMatchingMedia": "Aucun résultat :(",
   "noMoreResult": "Aucun autre résultat",
   "noResultMessage": "Essayez une nouvelle recherche :)",
   "noResultTitle": "Aucun résultat !",
-  "searchHint": "Rechercher..."
+  "noWebsiteAvailableSnackMessage": "Aucun site web disponible",
+  "openWebsite": "Consulter le site web",
+  "pegiRatingLabel": "âge",
+  "searchHint": "Rechercher...",
+  "synopsisTabTitle": "Synopsis"
 }

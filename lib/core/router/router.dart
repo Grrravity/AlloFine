@@ -29,7 +29,9 @@ mixin RouterMixin<T extends StatefulWidget> on State<T> {
             pageBuilder: (context, state) => buildPageWithDefaultTransition(
               context: context,
               state: state,
-              child: const ExplorerDetailPage(),
+              child: ExplorerDetailPage(
+                id: state.pathParameters[ExplorerDetailPage.idPathParam]!,
+              ),
             ),
           ),
         ],

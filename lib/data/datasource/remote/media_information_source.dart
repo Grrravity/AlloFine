@@ -1,6 +1,7 @@
 import 'package:allofine/core/error/failure.dart';
 import 'package:allofine/data/client/utils/response_extension.dart';
 import 'package:allofine/data/client/utils/rest_api_handler.dart';
+import 'package:allofine/data/models/media_information_detail_dto.dart';
 import 'package:allofine/data/models/media_information_dto.dart';
 import 'package:allofine/data/models/paginated_response_dto.dart';
 import 'package:allofine/domain/entities/pagination.dart';
@@ -37,4 +38,12 @@ class MediaInfoApiSource {
     );
   }
 
+  Future<MediaInformationDetailDTO> getDetail(String mediaId) async {
+    final response = await client.get(
+      route: baseEndpoint,
+      queryParameters: {'i': mediaId, 'plot': 'full'},
+    );
+
+    return MediaInformationDetailDTO.fromJson(response.item); // TODO Implement
+  }
 }
