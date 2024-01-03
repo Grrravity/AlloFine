@@ -27,5 +27,6 @@
   "noMatchingMedia": "Aucun résultat :(",
   "noMoreResult": "Aucun autre résultat",
   "noResultMessage": "Essayez une nouvelle recherche :)",
-  "noResultTitle": "Aucun résultat !"
+  "noResultTitle": "Aucun résultat !",
+  "searchHint": "Rechercher..."
 }

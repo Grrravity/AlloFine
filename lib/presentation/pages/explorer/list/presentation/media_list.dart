@@ -142,7 +142,9 @@ class _MediaAbstractCard extends StatelessWidget {
                         TextSpan(
                           text: item.type.localized(context),
                         ),
-                        const TextSpan(text: ' | '),
+                        const TextSpan(
+                          text: ' | ', //NOTE Could be done cleaner
+                        ),
                         TextSpan(text: item.year),
                       ],
                     ),

@@ -21,7 +21,7 @@ class SearchInput extends StatelessWidget {
         },
         textAlignVertical: TextAlignVertical.bottom,
         style: context.textTheme.bodyMedium,
-        hintText: 'rechercher...',
+        hintText: context.l10n.searchHint,
         prefixIcon: GestureDetector(
           onTap: () {
             context.read<ExplorerController>().searchElement();
