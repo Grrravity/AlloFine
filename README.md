@@ -59,19 +59,18 @@ En effet, les InheritedWidget utilise le plus grand principe de Flutter : L'hér
 ## Api OMDB
 Cette API, gratuite et plutôt pratique, lève quelques problématiques intéressantes. Voici en format bullet point, les "pains point" que j'y ai trouvé :
 
-1. La documentation n'est pas exhaustive et ne permet pas tout à fait de comprendre la structure de données retournée par les endpoint. => Un swagger conventionnel aurait été plutôt pratique :)
+1. La documentation n'est pas exhaustive et ne permet pas tout à fait de comprendre la structure de données retournées. => Un [swagger](https://swagger.io/) conventionnel aurait été plutôt pratique :)
 
-2. L'API ne semble pas tout à fait respecter certains standards des API REST comme
-   1. Les paginations ne contiennent que le maximum d'élément, mais pas la page actuelle ni la taille du retour paginé
+2. L'API ne semble pas tout à fait respecter certains standards des API REST comme :
+   1. Les informations de  paginations ne contiennent que le maximum d'élément, mais pas la page actuelle ni la taille du retour paginé
 
-   2. L'API key est envoyé en queryParameters. Un header serait probablement bienvenue soit avec un Authorization soit avec un autre header custom
+   2. L'API key est envoyé en queryParameters. Un header serait probablement plus adéquat soit avec un Authorization basic soit avec un Header custom
    
-   3. Certains champs retournent "N/A" quand non spécifiés tandisque d'autres ne sont pas retournés quand non spécifiés, crééant des problèmes de nullité et montrant une certaine inconsistance dans le modèle de donnée
+   3. Certains champs retournent "N/A" quand non spécifiés tandis que d'autres ne sont pas retournés quand non spécifiés, créant des problèmes de nullité et montrant une certaine inconsistance dans le modèle de donnée
 
+   4. Certains champs devraient probablement être décomposés en modèles dédiés comme les listes d'Acteurs / Auteurs afin de réduire la responsabilité du front-end quand au traitement de ces données
 
-   4. Certains champs devrais probablement être décomposés en modèles dédiés comme les listes d'Acteurs / Autheurs afin de réduire la responsabilité du front-end quand au traitement des données
-
-   5. Même remarque sur les Dates qui pouraient respecter les normes ISO propresaux dates ainsi que les entiers et décimaux qui poraient être envoyé comme tels
+   5. Même remarque sur les Dates qui pourraient respecter les normes ISO propres aux dates ainsi que les entiers et décimaux qui pourraient être envoyé comme tels
 
 ## FrontEnd mobile
 
