@@ -5,6 +5,7 @@ import 'package:allofine/core/theme/theme.dart';
 import 'package:allofine/domain/entities/media_information.dart';
 import 'package:allofine/domain/usecase/media_information_usecase.dart';
 import 'package:allofine/presentation/localization/object_to_arb.dart';
+import 'package:allofine/presentation/pages/explorer/detail/explorer_detail_page.dart';
 import 'package:allofine/presentation/pages/explorer/list/controller/explorer_controller.dart';
 import 'package:allofine/presentation/widgets/dismiss_keyboard.dart';
 import 'package:allofine/presentation/widgets/empty_widget.dart';
@@ -12,6 +13,7 @@ import 'package:allofine/presentation/widgets/error_widget.dart';
 import 'package:allofine/presentation/widgets/form_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:provider/provider.dart';
 
@@ -37,7 +39,7 @@ class ExplorerPage extends StatelessWidget {
                 SearchInput(),
                 Expanded(
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(24, 12, 24, 12),
+                    padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                     child: MediaList(),
                   ),
                 ),

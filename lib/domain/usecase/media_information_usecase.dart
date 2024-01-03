@@ -1,5 +1,6 @@
 import 'package:allofine/core/error/failure.dart';
 import 'package:allofine/domain/entities/media_information.dart';
+import 'package:allofine/domain/entities/media_information_detail.dart';
 import 'package:allofine/domain/entities/paginated_response.dart';
 import 'package:allofine/domain/entities/pagination.dart';
 import 'package:allofine/domain/repositories/media_information_repository.dart';
@@ -24,4 +25,11 @@ class MediaInformationUsecase {
     return topicDiscussionOrFailure;
   }
 
+  Future<Either<Failure, MediaInformationDetail>> getDetail(
+    String mediaId,
+  ) async {
+    final listOrFailure = await mediaInfoRepository.getDetail(mediaId);
+
+    return listOrFailure;
+  }
 }

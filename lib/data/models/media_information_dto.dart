@@ -1,5 +1,5 @@
+import 'package:allofine/data/models/media_type_extension.dart';
 import 'package:allofine/domain/entities/media_information.dart';
-import 'package:allofine/domain/entities/media_type.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'media_information_dto.freezed.dart';
@@ -62,28 +62,5 @@ extension OnMediaInformationDTOList on List<MediaInformationDTO> {
     if (isEmpty) return [];
     return map<MediaInformation>((MediaInformationDTO e) => e.toEntity)
         .toList();
-  }
-}
-
-extension OnMediaTypeString on String {
-  MediaType get toEntity {
-    switch (this) {
-      case 'series':
-        return const MediaType.series();
-      case 'movie':
-        return const MediaType.movie();
-      default:
-        return MediaType.other(label: this);
-    }
-  }
-}
-
-extension OnMediaType on MediaType {
-  String get toDTO {
-    return map(
-      series: (_) => 'series',
-      movie: (_) => 'movie',
-      other: (other) => other.label,
-    );
   }
 }

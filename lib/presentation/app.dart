@@ -20,6 +20,7 @@ class _AlloFineAppState extends State<AlloFineApp>
       debugShowCheckedModeBanner: false,
       routeInformationProvider: router.routeInformationProvider,
       routeInformationParser: router.routeInformationParser,
+      scaffoldMessengerKey: snackbarKey,
       routerDelegate: router.routerDelegate,
       theme: lightTheme.materialTheme,
       localizationsDelegates: const [
@@ -32,3 +33,6 @@ class _AlloFineAppState extends State<AlloFineApp>
     );
   }
 }
+
+final GlobalKey<ScaffoldMessengerState> snackbarKey =
+    GlobalKey<ScaffoldMessengerState>();
