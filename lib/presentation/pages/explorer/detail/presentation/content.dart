@@ -466,141 +466,143 @@ class _InfoTab extends StatelessWidget {
     final l10n = context.l10n;
     return ColoredBox(
       color: Palette.grey200,
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(24),
-            child: Card(
-              elevation: 3,
-              color: Palette.white,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: double.maxFinite,
-                    height: 40,
-                    color: Palette.blueInfo.withOpacity(0.2),
-                    child: Padding(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(24),
+              child: Card(
+                elevation: 3,
+                color: Palette.white,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: double.maxFinite,
+                      height: 40,
+                      color: Palette.blueInfo.withOpacity(0.2),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                        ),
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.edit,
+                              color: Palette.blueInfo,
+                            ),
+                            const SizedBox(
+                              width: 8,
+                            ),
+                            Text(
+                              media.director,
+                              style: context.textTheme.titleSmall!.copyWith(
+                                color: Palette.blueInfo,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Padding(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
+                        horizontal: 24,
+                        vertical: 8,
                       ),
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Icon(
-                            Icons.edit,
-                            color: Palette.blueInfo,
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                l10n.pegiRatingLabel.toUpperCase(),
+                                style: context.textTheme.labelLarge!.copyWith(
+                                  color: Palette.grey500,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              Text(media.rated),
+                            ],
                           ),
                           const SizedBox(
-                            width: 8,
+                            width: 24,
                           ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                l10n.movieLengthTitle.toUpperCase(),
+                                style: context.textTheme.labelLarge!.copyWith(
+                                  color: Palette.grey500,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              Text(media.runtime),
+                            ],
+                          ),
+                          const SizedBox(
+                            width: 24,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                l10n.movieLanguageTitle.toUpperCase(),
+                                style: context.textTheme.labelLarge!.copyWith(
+                                  color: Palette.grey500,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 8,
+                              ),
+                              ...List.generate(
+                                media.language.split(',').length,
+                                (index) => Text(
+                                  media.language.split(',')[index].trim(),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 24,
+                        vertical: 8,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
                           Text(
-                            media.director,
-                            style: context.textTheme.titleSmall!.copyWith(
-                              color: Palette.blueInfo,
+                            l10n.movieActorTitle.toUpperCase(),
+                            style: context.textTheme.labelLarge!.copyWith(
+                              color: Palette.grey500,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          ...List.generate(
+                            media.actors.split(',').length,
+                            (index) => Text(
+                              media.actors.split(',')[index].trim(),
                             ),
                           ),
                         ],
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 8,
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              l10n.pegiRatingLabel.toUpperCase(),
-                              style: context.textTheme.labelLarge!.copyWith(
-                                color: Palette.grey500,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            Text(media.rated),
-                          ],
-                        ),
-                        const SizedBox(
-                          width: 24,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              l10n.movieLengthTitle.toUpperCase(),
-                              style: context.textTheme.labelLarge!.copyWith(
-                                color: Palette.grey500,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            Text(media.runtime),
-                          ],
-                        ),
-                        const SizedBox(
-                          width: 24,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              l10n.movieLanguageTitle.toUpperCase(),
-                              style: context.textTheme.labelLarge!.copyWith(
-                                color: Palette.grey500,
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 8,
-                            ),
-                            ...List.generate(
-                              media.language.split(',').length,
-                              (index) => Text(
-                                media.language.split(',')[index].trim(),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 8,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          l10n.movieActorTitle.toUpperCase(),
-                          style: context.textTheme.labelLarge!.copyWith(
-                            color: Palette.grey500,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 8,
-                        ),
-                        ...List.generate(
-                          media.actors.split(',').length,
-                          (index) => Text(
-                            media.actors.split(',')[index].trim(),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
