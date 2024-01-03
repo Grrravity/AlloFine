@@ -1,7 +1,19 @@
 {
     "settings": {
-        "dart.flutterSdkPath": "/Users/grrravity/.asdf/installs/flutter/3.16.4-stable"
+        "dart.flutterSdkPath": "/Users/grrravity/.asdf/installs/flutter/3.16.4-stable",
+        "files.exclude": {
+            "**/.classpath": true,
+            "**/.project": true,
+            "**/.settings": true,
+            "**/.factorypath": true,
+            "**/*.config.dart": true,
+            "**/*.freezed.dart": true,
+            "**/*.g.dart": true,
+            "**/*.mocks.dart": true,
+            "**/*.gr.dart": true,
+        },
     },
+    
     "folders": [
     {
         "name": "App",

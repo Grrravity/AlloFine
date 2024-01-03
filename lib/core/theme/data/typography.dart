@@ -35,60 +35,60 @@ const textTheme = TextTheme(
     fontWeight: FontWeight.w800,
   ),
   displayMedium: ManropeTextStyle(
-    fontSize: 30,
+    fontSize: 28,
     fontWeight: FontWeight.w800,
   ),
   displaySmall: ManropeTextStyle(
-    fontSize: 12,
+    fontSize: 26,
     fontWeight: FontWeight.w700,
   ),
   titleLarge: ManropeTextStyle(
-    fontSize: 20,
-    fontWeight: FontWeight.w700,
-  ),
-  titleMedium: ManropeTextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.w700,
-  ),
-  titleSmall: ManropeTextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w600,
-  ),
-  headlineLarge: ManropeTextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w700,
   ),
-  headlineMedium: ManropeTextStyle(
+  titleMedium: ManropeTextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.w700,
+  ),
+  titleSmall: ManropeTextStyle(
     fontSize: 20,
+    fontWeight: FontWeight.w600,
+  ),
+  headlineLarge: ManropeTextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w700,
+  ),
+  headlineMedium: ManropeTextStyle(
+    fontSize: 18,
     fontWeight: FontWeight.w600,
   ),
   headlineSmall: ManropeTextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w400,
   ),
-  labelLarge: ManropeTextStyle(
+  bodyLarge: ManropeTextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w700,
   ),
-  labelMedium: ManropeTextStyle(
+  bodyMedium: ManropeTextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w600,
     height: 1.5,
   ),
-  labelSmall: ManropeTextStyle(
-    fontSize: 12,
-    fontWeight: FontWeight.w400,
-  ),
-  bodyLarge: ManropeTextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.w500,
-  ),
-  bodyMedium: ManropeTextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.w500,
-  ),
   bodySmall: ManropeTextStyle(
     fontSize: 14,
+    fontWeight: FontWeight.w400,
+  ),
+  labelLarge: ManropeTextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+  ),
+  labelMedium: ManropeTextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+  ),
+  labelSmall: ManropeTextStyle(
+    fontSize: 10,
     fontWeight: FontWeight.w400,
   ),
 );
